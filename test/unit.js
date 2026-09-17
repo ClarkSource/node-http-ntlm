@@ -132,13 +132,13 @@ describe('Unit tests', () => {
   it('createType3Message', () => {
     const createType3Message = ntlm.__get__("createType3Message");
 
-    var mathMock = {
-      random: function () {
-        return 0.8092;
-      },
-      floor: Math.floor
-    };
-    ntlm.__set__("Math", mathMock);
+    var realCrypto = require("crypto");
+    var cryptoMock = Object.assign({}, realCrypto, {
+      randomBytes: function () {
+        return Buffer.from([0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf]);
+      }
+    });
+    ntlm.__set__("crypto", cryptoMock);
 
     var dateMock = {
       now: function () {
@@ -181,13 +181,13 @@ describe('Unit tests', () => {
   it('createType3Message (negotiateFlags zero)', () => {
     const createType3Message = ntlm.__get__("createType3Message");
 
-    var mathMock = {
-      random: function () {
-        return 0.8092;
-      },
-      floor: Math.floor
-    };
-    ntlm.__set__("Math", mathMock);
+    var realCrypto = require("crypto");
+    var cryptoMock = Object.assign({}, realCrypto, {
+      randomBytes: function () {
+        return Buffer.from([0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf]);
+      }
+    });
+    ntlm.__set__("crypto", cryptoMock);
 
     var dateMock = {
       now: function () {
@@ -230,13 +230,13 @@ describe('Unit tests', () => {
   it('createType3Message (empty options)', () => {
     const createType3Message = ntlm.__get__("createType3Message");
 
-    var mathMock = {
-      random: function () {
-        return 0.8092;
-      },
-      floor: Math.floor
-    };
-    ntlm.__set__("Math", mathMock);
+    var realCrypto = require("crypto");
+    var cryptoMock = Object.assign({}, realCrypto, {
+      randomBytes: function () {
+        return Buffer.from([0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf, 0xcf]);
+      }
+    });
+    ntlm.__set__("crypto", cryptoMock);
 
     var dateMock = {
       now: function () {
