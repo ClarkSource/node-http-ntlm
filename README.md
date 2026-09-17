@@ -28,14 +28,14 @@ Thank you for your support!
 
 ## Install
 
-You can install __httpntlm__ using the Node Package Manager (npm):
+You can install __@clark/httpntlm__ using the Node Package Manager (npm):
 
-    npm install httpntlm
+    npm install @clark/httpntlm
 
 ## How to use
 
 ```js
-var httpntlm = require('httpntlm');
+var httpntlm = require('@clark/httpntlm');
 
 httpntlm.get({
   url: "https://someurl.com",
@@ -79,7 +79,7 @@ Otherwise, NTLMv1 or NTLMv1 with NTLMv2 extended security will be used.
 
 ### pre-encrypt the password
 ```js
-var httpntlm = require('httpntlm');
+var httpntlm = require('@clark/httpntlm');
 var ntlm = httpntlm.ntlm;
 var lm = ntlm.create_LM_hashed_password('Azx123456');
 var nt = ntlm.create_NT_hashed_password('Azx123456');
@@ -104,7 +104,7 @@ httpntlm.get({
 If you want to use the NTLM-functions yourself, you can access the ntlm-library like this (https example):
 
 ```js
-var ntlm = require('httpntlm').ntlm;
+var ntlm = require('@clark/httpntlm').ntlm;
 var async = require('async');
 var httpreq = require('httpreq');
 var HttpsAgent = require('agentkeepalive').HttpsAgent;
